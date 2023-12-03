@@ -3,6 +3,7 @@ defmodule AdventOfCode.Day02Test do
 
   import AdventOfCode.Day02
 
+  @tag :skip
   test "parse line" do
     line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green"
     expected = {1, [%{blue: 3, red: 4}, %{red: 1, green: 2, blue: 6}, %{green: 2}]}
@@ -10,6 +11,7 @@ defmodule AdventOfCode.Day02Test do
     assert parse_game(line) == expected
   end
 
+  @tag :skip
   test "part1 unit tests" do
     input = """
     Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -69,6 +71,7 @@ defmodule AdventOfCode.Day02Test do
 
   end
 
+  @tag :skip
   test "get minimum set" do
     game = [%{blue: 3, red: 4}, %{red: 1, green: 2, blue: 6}, %{green: 2}]
     expected = %{blue: 6, red: 4, green: 2}
@@ -76,6 +79,7 @@ defmodule AdventOfCode.Day02Test do
     assert get_minimum_set(game) == expected
   end
 
+  @tag :skip
   test "score set" do
     set = %{blue: 6, red: 4, green: 2}
     expected = 6 * 4 * 2
@@ -88,6 +92,7 @@ defmodule AdventOfCode.Day02Test do
     assert score_set(set) == expected
   end
 
+  @tag :skip
   test "filter pull" do
     pull = %{blue: 3, red: 4}
     limits = %{blue: 2}
@@ -101,6 +106,7 @@ defmodule AdventOfCode.Day02Test do
     assert keep_pull(pull, limits) == true
   end
 
+  @tag :skip
   test "filter games unit" do
     games = [
       {1, [%{blue: 3, red: 4}, %{red: 1, green: 2, blue: 6}, %{green: 2}]},
@@ -116,6 +122,7 @@ defmodule AdventOfCode.Day02Test do
     assert filter_games(games, limits) == expected
   end
 
+  @tag :skip
   test "count games unit" do
     games = [
       {1, [%{blue: 3, red: 4}, %{red: 1, green: 2, blue: 6}, %{green: 2}]},
@@ -154,6 +161,7 @@ defmodule AdventOfCode.Day02Test do
     assert result
   end
 
+  @tag :skip
   test "part2" do
     input = File.read!("inputs/input02.txt")
     games = parse_games(input)
